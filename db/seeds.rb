@@ -133,8 +133,8 @@ cat3.products.create!({
 })
 
 User.create!(
-  firstname: 'Brad',
-  lastname: 'Thiessen',
+  first_name: 'Brad',
+  last_name: 'Thiessen',
   email: 'brad@zharphyn.ca',
   password_digest: BCrypt::Password.create('ella'))
 
@@ -147,7 +147,7 @@ Review.create!(
 
 Review.create!(
   user_id: 1,
-  product_id: 1,
+  product_id: 6,
   rating: 2
 )
 

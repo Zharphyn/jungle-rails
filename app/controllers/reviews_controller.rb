@@ -1,4 +1,4 @@
-class ReviewsController < 
+class ReviewsController < ApplicationController
   before_filter :authorize
 
   def create

@@ -1,7 +1,12 @@
 class CartsController < ApplicationController
   before_filter :authorize
   def show
-    puts "PARAMS ARE #{params}"
+    product_id = params[:product_id].to_s
+    item = cart[product_id] || { "quantity" => 0 }
+    if item["quantity"] == 0
+      flash[:notice] = 'Your cart is empty!'
+      redirect_to "/"
+    end
   end
 
   def add_item

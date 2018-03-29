@@ -132,5 +132,30 @@ cat3.products.create!({
   price: 2_483.75
 })
 
+User.create!(
+  firstname: 'Brad',
+  lastname: 'Thiessen',
+  email: 'brad@zharphyn.ca',
+  password_digest: BCrypt::Password.create('ella'))
+
+Review.create!(
+  user_id: 1,
+  product_id: 1,
+  description: "AMAZING!",
+  rating: 5
+)
+
+Review.create!(
+  user_id: 1,
+  product_id: 1,
+  rating: 2
+)
+
+Review.create!(
+  user_id: 1,
+  product_id: 1,
+  description: "Not bad but could be better",
+  rating: 3
+)
 
 puts "DONE!"

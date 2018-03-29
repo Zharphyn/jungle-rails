@@ -18,6 +18,17 @@ Rails.application.routes.draw do
     resources :categories, except: [:edit, :update, :show]
   end
 
+  namespace :user do
+    root to: 'dashboard#show'
+    get '/login' => 'sessions#new'
+    
+    get '/register' => 'register#new'
+    post '/register' => 'register#create'
+
+    post '/login' => 'sessions#create'
+    get '/logout' => 'sessions#destroy'
+  end
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
